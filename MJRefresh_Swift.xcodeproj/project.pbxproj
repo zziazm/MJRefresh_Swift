@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9800636A1F1F0002007EEDE7 /* MJRefreshComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980063691F1F0002007EEDE7 /* MJRefreshComponent.swift */; };
+		9800636C1F1F04FF007EEDE7 /* MJRefreshConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9800636B1F1F04FF007EEDE7 /* MJRefreshConst.swift */; };
+		9800636E1F1F3FC8007EEDE7 /* MJRefeshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9800636D1F1F3FC8007EEDE7 /* MJRefeshHeader.swift */; };
+		980063EC1F207CEC007EEDE7 /* MJRefreshStateHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980063EB1F207CEC007EEDE7 /* MJRefreshStateHeader.swift */; };
+		980063EE1F208974007EEDE7 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 980063ED1F208974007EEDE7 /* MJRefresh.bundle */; };
+		983F58721F1EF8250027F12E /* MJExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983F58711F1EF8250027F12E /* MJExampleViewController.swift */; };
 		989FA6FA1F18AC4C0068BA0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989FA6F91F18AC4C0068BA0F /* AppDelegate.swift */; };
 		989FA6FC1F18AC4C0068BA0F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989FA6FB1F18AC4C0068BA0F /* ViewController.swift */; };
 		989FA6FF1F18AC4C0068BA0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 989FA6FD1F18AC4C0068BA0F /* Main.storyboard */; };
@@ -34,6 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		980063691F1F0002007EEDE7 /* MJRefreshComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJRefreshComponent.swift; sourceTree = "<group>"; };
+		9800636B1F1F04FF007EEDE7 /* MJRefreshConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJRefreshConst.swift; sourceTree = "<group>"; };
+		9800636D1F1F3FC8007EEDE7 /* MJRefeshHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJRefeshHeader.swift; sourceTree = "<group>"; };
+		980063EB1F207CEC007EEDE7 /* MJRefreshStateHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJRefreshStateHeader.swift; sourceTree = "<group>"; };
+		980063ED1F208974007EEDE7 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
+		983F58711F1EF8250027F12E /* MJExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJExampleViewController.swift; sourceTree = "<group>"; };
 		989FA6F61F18AC4C0068BA0F /* MJRefresh_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MJRefresh_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		989FA6F91F18AC4C0068BA0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		989FA6FB1F18AC4C0068BA0F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +86,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		980063681F1EFFC8007EEDE7 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				980063691F1F0002007EEDE7 /* MJRefreshComponent.swift */,
+				9800636D1F1F3FC8007EEDE7 /* MJRefeshHeader.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		980063E81F207CAE007EEDE7 /* custom */ = {
+			isa = PBXGroup;
+			children = (
+				980063E91F207CAE007EEDE7 /* Footer */,
+				980063EA1F207CAE007EEDE7 /* Header */,
+			);
+			path = custom;
+			sourceTree = "<group>";
+		};
+		980063E91F207CAE007EEDE7 /* Footer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Footer;
+			sourceTree = "<group>";
+		};
+		980063EA1F207CAE007EEDE7 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				980063EB1F207CEC007EEDE7 /* MJRefreshStateHeader.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		983F586E1F1EF7DC0027F12E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				983F58701F1EF7F60027F12E /* First */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		983F586F1F1EF7DC0027F12E /* MJRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				980063ED1F208974007EEDE7 /* MJRefresh.bundle */,
+				980063E81F207CAE007EEDE7 /* custom */,
+				980063681F1EFFC8007EEDE7 /* Base */,
+				9800636B1F1F04FF007EEDE7 /* MJRefreshConst.swift */,
+			);
+			path = MJRefresh;
+			sourceTree = "<group>";
+		};
+		983F58701F1EF7F60027F12E /* First */ = {
+			isa = PBXGroup;
+			children = (
+				983F58711F1EF8250027F12E /* MJExampleViewController.swift */,
+			);
+			path = First;
+			sourceTree = "<group>";
+		};
 		989FA6ED1F18AC4C0068BA0F = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +169,8 @@
 		989FA6F81F18AC4C0068BA0F /* MJRefresh_Swift */ = {
 			isa = PBXGroup;
 			children = (
+				983F586E1F1EF7DC0027F12E /* Classes */,
+				983F586F1F1EF7DC0027F12E /* MJRefresh */,
 				989FA6F91F18AC4C0068BA0F /* AppDelegate.swift */,
 				989FA6FB1F18AC4C0068BA0F /* ViewController.swift */,
 				989FA6FD1F18AC4C0068BA0F /* Main.storyboard */,
@@ -193,6 +267,7 @@
 				TargetAttributes = {
 					989FA6F51F18AC4C0068BA0F = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 4QQ73282F5;
 						ProvisioningStyle = Automatic;
 					};
 					989FA7091F18AC4C0068BA0F = {
@@ -234,6 +309,7 @@
 			files = (
 				989FA7041F18AC4C0068BA0F /* LaunchScreen.storyboard in Resources */,
 				989FA7011F18AC4C0068BA0F /* Assets.xcassets in Resources */,
+				980063EE1F208974007EEDE7 /* MJRefresh.bundle in Resources */,
 				989FA6FF1F18AC4C0068BA0F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,7 +335,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9800636A1F1F0002007EEDE7 /* MJRefreshComponent.swift in Sources */,
+				9800636C1F1F04FF007EEDE7 /* MJRefreshConst.swift in Sources */,
+				9800636E1F1F3FC8007EEDE7 /* MJRefeshHeader.swift in Sources */,
+				980063EC1F207CEC007EEDE7 /* MJRefreshStateHeader.swift in Sources */,
 				989FA6FC1F18AC4C0068BA0F /* ViewController.swift in Sources */,
+				983F58721F1EF8250027F12E /* MJExampleViewController.swift in Sources */,
 				989FA6FA1F18AC4C0068BA0F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +495,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4QQ73282F5;
 				INFOPLIST_FILE = MJRefresh_Swift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "zm.MJRefresh-Swift";
@@ -426,6 +508,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4QQ73282F5;
 				INFOPLIST_FILE = MJRefresh_Swift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "zm.MJRefresh-Swift";
@@ -507,6 +590,7 @@
 				989FA7201F18AC4C0068BA0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		989FA7211F18AC4C0068BA0F /* Build configuration list for PBXNativeTarget "MJRefresh_SwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +599,7 @@
 				989FA7231F18AC4C0068BA0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		989FA7241F18AC4C0068BA0F /* Build configuration list for PBXNativeTarget "MJRefresh_SwiftUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +608,7 @@
 				989FA7261F18AC4C0068BA0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
