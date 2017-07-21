@@ -72,9 +72,8 @@ class MJRefreshStateHeader: MJRefeshHeader {
                     formatter.dateFormat = "yyyy-MM-dd HH:mm"
                 }
                 
-                
                 let time = formatter.string(from: lupdateTime)
-                self.lastUpdatedTimeLabel.text = Bundle.mj_localizedStringForKey(key: MJRefreshHeaderLastTimeText) + (isToday ? Bundle.mj_localizedStringForKey(key: MJRefreshHeaderLastTimeText) : "") + time
+                self.lastUpdatedTimeLabel.text = Bundle.mj_localizedStringForKey(key: MJRefreshHeaderLastTimeText) + (isToday ? Bundle.mj_localizedStringForKey(key: MJRefreshHeaderDateTodayText) : "") + time
                 
             }else{
                 self.lastUpdatedTimeLabel.text = Bundle.mj_localizedStringForKey(key: MJRefreshHeaderLastTimeText) + Bundle.mj_localizedStringForKey(key: MJRefreshHeaderNoneLastDateText)
@@ -143,7 +142,6 @@ extension Bundle{
         
         return (UIImage(contentsOfFile: path!)?.withRenderingMode(.alwaysOriginal))!
     }
-    
     static func mj_localizedStringForKey(key: String, value: String?) -> String{
         var language = Locale.preferredLanguages.first
         if let la = language {

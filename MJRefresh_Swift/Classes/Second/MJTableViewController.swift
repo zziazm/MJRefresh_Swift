@@ -1,50 +1,27 @@
 //
-//  MJExampleViewController.swift
+//  MJTableViewController.swift
 //  MJRefresh_Swift
 //
-//  Created by 赵铭 on 2017/7/19.
+//  Created by 赵铭 on 2017/7/21.
 //  Copyright © 2017年 zm. All rights reserved.
 //
 
 import UIKit
+import Foundation
 
-
-
-class MJExample: NSObject {
-    var header: String?
-    var titles: [String]?
-    var methods: [String]?
-    var vcClass: UIViewController.Type?
+ extension UIViewController {
+//    open override class func initialize(){
+//        
+//    }
+    
 }
 
 
-let MJExample00 = "UITableView + 下拉刷新"
-let MJExample10 = "UITableView + 上拉刷新"
-let MJExample20 = "UICollectionView"
-let MJExample30 = "UIWebView"
+class MJTableViewController: UITableViewController {
 
-class MJExampleViewController: UITableViewController {
-    
-    lazy var examples: [MJExample] = {
-        var tem = [MJExample]()
-        var exam0 = MJExample()
-        exam0.vcClass = MJTableViewController.self
-        exam0.header = "UITableView + 下拉刷新"
-        exam0.titles = ["默认", "动画图片", "隐藏时间", "隐藏状态和时间", "自定义文字", "自定义刷新控件"]
-        exam0.methods = ["example01", "example02", "example03", "example04", "example05", "example06"]
-        tem.append(exam0)
-        return tem
-    }()
- 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.mj_header = MJRefreshNormalHeader.header(refreshingBlock: { 
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2.0, execute: {
-                self.tableView.mj_header?.endRefreshing()
-            })
-        })
-        self.tableView.mj_header?.autoChangeAlpha = true
-        
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -61,48 +38,23 @@ class MJExampleViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return examples.count
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        let exam = examples[section]
-        return exam.titles!.count
+        return 0
     }
-    
-    
 
-    
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "example", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        let exam = examples[indexPath.section]
-        cell.textLabel?.text = exam.titles?[indexPath.row]
-        cell.detailTextLabel?.text = exam.methods?[indexPath.row]
         // Configure the cell...
 
         return cell
     }
-    
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let exam = examples[section]
-        return exam.header
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let exam = self.examples[indexPath.section]
-        if let vcClass = exam.vcClass{
-            let vc: UIViewController = vcClass.init()
-            vc.title = exam.titles?[indexPath.row]
-            vc.setValue(exam.methods?[indexPath.row], forKeyPath: "method")
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
-        
-    }
-    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-    }
-    
+    */
 
     /*
     // Override to support conditional editing of the table view.

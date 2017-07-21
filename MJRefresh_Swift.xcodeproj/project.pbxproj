@@ -15,6 +15,7 @@
 		980063F01F209B1B007EEDE7 /* MJRefreshNormalHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980063EF1F209B1B007EEDE7 /* MJRefreshNormalHeader.swift */; };
 		980063F51F21913B007EEDE7 /* UIScrollView+MJRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980063F41F21913B007EEDE7 /* UIScrollView+MJRefresh.swift */; };
 		980064341F21E1C4007EEDE7 /* UIView+MJExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980064331F21E1C4007EEDE7 /* UIView+MJExtension.swift */; };
+		980064371F21FB97007EEDE7 /* MJTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980064361F21FB97007EEDE7 /* MJTableViewController.swift */; };
 		983F58721F1EF8250027F12E /* MJExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983F58711F1EF8250027F12E /* MJExampleViewController.swift */; };
 		989FA6FA1F18AC4C0068BA0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989FA6F91F18AC4C0068BA0F /* AppDelegate.swift */; };
 		989FA6FC1F18AC4C0068BA0F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989FA6FB1F18AC4C0068BA0F /* ViewController.swift */; };
@@ -51,6 +52,7 @@
 		980063EF1F209B1B007EEDE7 /* MJRefreshNormalHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJRefreshNormalHeader.swift; sourceTree = "<group>"; };
 		980063F41F21913B007EEDE7 /* UIScrollView+MJRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+MJRefresh.swift"; sourceTree = "<group>"; };
 		980064331F21E1C4007EEDE7 /* UIView+MJExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+MJExtension.swift"; sourceTree = "<group>"; };
+		980064361F21FB97007EEDE7 /* MJTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJTableViewController.swift; sourceTree = "<group>"; };
 		983F58711F1EF8250027F12E /* MJExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJExampleViewController.swift; sourceTree = "<group>"; };
 		989FA6F61F18AC4C0068BA0F /* MJRefresh_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MJRefresh_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		989FA6F91F18AC4C0068BA0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,9 +128,18 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		980064351F21FB83007EEDE7 /* Second */ = {
+			isa = PBXGroup;
+			children = (
+				980064361F21FB97007EEDE7 /* MJTableViewController.swift */,
+			);
+			path = Second;
+			sourceTree = "<group>";
+		};
 		983F586E1F1EF7DC0027F12E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				980064351F21FB83007EEDE7 /* Second */,
 				983F58701F1EF7F60027F12E /* First */,
 			);
 			path = Classes;
@@ -352,6 +363,7 @@
 				989FA6FC1F18AC4C0068BA0F /* ViewController.swift in Sources */,
 				983F58721F1EF8250027F12E /* MJExampleViewController.swift in Sources */,
 				980063F01F209B1B007EEDE7 /* MJRefreshNormalHeader.swift in Sources */,
+				980064371F21FB97007EEDE7 /* MJTableViewController.swift in Sources */,
 				989FA6FA1F18AC4C0068BA0F /* AppDelegate.swift in Sources */,
 				980064341F21E1C4007EEDE7 /* UIView+MJExtension.swift in Sources */,
 			);
