@@ -13,6 +13,8 @@
 		980063EC1F207CEC007EEDE7 /* MJRefreshStateHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980063EB1F207CEC007EEDE7 /* MJRefreshStateHeader.swift */; };
 		980063EE1F208974007EEDE7 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 980063ED1F208974007EEDE7 /* MJRefresh.bundle */; };
 		980063F01F209B1B007EEDE7 /* MJRefreshNormalHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980063EF1F209B1B007EEDE7 /* MJRefreshNormalHeader.swift */; };
+		980063F51F21913B007EEDE7 /* UIScrollView+MJRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980063F41F21913B007EEDE7 /* UIScrollView+MJRefresh.swift */; };
+		980064341F21E1C4007EEDE7 /* UIView+MJExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980064331F21E1C4007EEDE7 /* UIView+MJExtension.swift */; };
 		983F58721F1EF8250027F12E /* MJExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983F58711F1EF8250027F12E /* MJExampleViewController.swift */; };
 		989FA6FA1F18AC4C0068BA0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989FA6F91F18AC4C0068BA0F /* AppDelegate.swift */; };
 		989FA6FC1F18AC4C0068BA0F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989FA6FB1F18AC4C0068BA0F /* ViewController.swift */; };
@@ -47,6 +49,8 @@
 		980063EB1F207CEC007EEDE7 /* MJRefreshStateHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJRefreshStateHeader.swift; sourceTree = "<group>"; };
 		980063ED1F208974007EEDE7 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
 		980063EF1F209B1B007EEDE7 /* MJRefreshNormalHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJRefreshNormalHeader.swift; sourceTree = "<group>"; };
+		980063F41F21913B007EEDE7 /* UIScrollView+MJRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+MJRefresh.swift"; sourceTree = "<group>"; };
+		980064331F21E1C4007EEDE7 /* UIView+MJExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+MJExtension.swift"; sourceTree = "<group>"; };
 		983F58711F1EF8250027F12E /* MJExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJExampleViewController.swift; sourceTree = "<group>"; };
 		989FA6F61F18AC4C0068BA0F /* MJRefresh_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MJRefresh_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		989FA6F91F18AC4C0068BA0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +141,8 @@
 				980063E81F207CAE007EEDE7 /* custom */,
 				980063681F1EFFC8007EEDE7 /* Base */,
 				9800636B1F1F04FF007EEDE7 /* MJRefreshConst.swift */,
+				980063F41F21913B007EEDE7 /* UIScrollView+MJRefresh.swift */,
+				980064331F21E1C4007EEDE7 /* UIView+MJExtension.swift */,
 			);
 			path = MJRefresh;
 			sourceTree = "<group>";
@@ -340,12 +346,14 @@
 			files = (
 				9800636A1F1F0002007EEDE7 /* MJRefreshComponent.swift in Sources */,
 				9800636C1F1F04FF007EEDE7 /* MJRefreshConst.swift in Sources */,
+				980063F51F21913B007EEDE7 /* UIScrollView+MJRefresh.swift in Sources */,
 				9800636E1F1F3FC8007EEDE7 /* MJRefeshHeader.swift in Sources */,
 				980063EC1F207CEC007EEDE7 /* MJRefreshStateHeader.swift in Sources */,
 				989FA6FC1F18AC4C0068BA0F /* ViewController.swift in Sources */,
 				983F58721F1EF8250027F12E /* MJExampleViewController.swift in Sources */,
 				980063F01F209B1B007EEDE7 /* MJRefreshNormalHeader.swift in Sources */,
 				989FA6FA1F18AC4C0068BA0F /* AppDelegate.swift in Sources */,
+				980064341F21E1C4007EEDE7 /* UIView+MJExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

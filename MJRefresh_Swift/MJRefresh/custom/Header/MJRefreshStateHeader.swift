@@ -8,48 +8,6 @@
 
 import UIKit
 
-extension Bundle{
-    static func mj_refreshBundle() -> Bundle{
-        let path: String = Bundle(for: MJRefreshComponent.self).path(forResource: "MJRefresh", ofType: "bundle")!
-        return Bundle(path: path)!
-    }
-    static func mj_arrowImage() -> UIImage {
-        let path = Bundle.mj_refreshBundle().path(forResource: "arrow@2x", ofType: "png")
-        
-        return (UIImage(contentsOfFile: path!)?.withRenderingMode(.alwaysOriginal))!
-    }
-    
-    static func mj_localizedStringForKey(key: String, value: String?) -> String{
-       var language = Locale.preferredLanguages.first
-       if let la = language {
-        if la.hasPrefix("en") {
-            language = "en"
-        } else if la.hasPrefix("zh") {
-            if la.range(of: "Hans") != nil{
-                language = "zh-Hans"
-            }else{
-                language = "zh-Hant"
-            }
-        }else{
-            language = "en"
-        }
-        
-       }
-       let path = Bundle.mj_refreshBundle().path(forResource: language, ofType: "lproj")
-       let bundle = Bundle(path: path!)
-        
-       let value = bundle?.localizedString(forKey: key, value: value, table: nil)
-       return Bundle.main.localizedString(forKey: key, value: value, table: nil)
-    }
-    
-    static func mj_localizedStringForKey(key: String) -> String{
-        return Bundle.mj_localizedStringForKey(key: key, value: nil)
-    }
-}
-
-
-
-
 class MJRefreshStateHeader: MJRefeshHeader {
     lazy var lastUpdatedTimeLabel: UILabel = {
         let label = UILabel.mj_label()
@@ -77,7 +35,12 @@ class MJRefreshStateHeader: MJRefeshHeader {
     }
     
     var lastUpdatedTimeText: ((Date?) -> String)?
-    
+    override var state: MJRefreshState{
+        didSet{
+           self.stateLabel.text = self.stateTitles[state]
+           self.lastUpdatedTimeKey = MJRefreshHeaderLastUpdatedTimeKey
+        }
+    }
     
     override var lastUpdatedTimeKey: String{
         
@@ -167,7 +130,45 @@ class MJRefreshStateHeader: MJRefeshHeader {
             }
         }
     }
-    
-        
-    
 }
+
+
+extension Bundle{
+    static func mj_refreshBundle() -> Bundle{
+        let path: String = Bundle(for: MJRefreshComponent.self).path(forResource: "MJRefresh", ofType: "bundle")!
+        return Bundle(path: path)!
+    }
+    static func mj_arrowImage() -> UIImage {
+        let path = Bundle.mj_refreshBundle().path(forResource: "arrow@2x", ofType: "png")
+        
+        return (UIImage(contentsOfFile: path!)?.withRenderingMode(.alwaysOriginal))!
+    }
+    
+    static func mj_localizedStringForKey(key: String, value: String?) -> String{
+        var language = Locale.preferredLanguages.first
+        if let la = language {
+            if la.hasPrefix("en") {
+                language = "en"
+            } else if la.hasPrefix("zh") {
+                if la.range(of: "Hans") != nil{
+                    language = "zh-Hans"
+                }else{
+                    language = "zh-Hant"
+                }
+            }else{
+                language = "en"
+            }
+            
+        }
+        let path = Bundle.mj_refreshBundle().path(forResource: language, ofType: "lproj")
+        let bundle = Bundle(path: path!)
+        
+        let value = bundle?.localizedString(forKey: key, value: value, table: nil)
+        return Bundle.main.localizedString(forKey: key, value: value, table: nil)
+    }
+    
+    static func mj_localizedStringForKey(key: String) -> String{
+        return Bundle.mj_localizedStringForKey(key: key, value: nil)
+    }
+}
+

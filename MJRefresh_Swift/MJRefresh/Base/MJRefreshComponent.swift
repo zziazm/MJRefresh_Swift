@@ -15,51 +15,51 @@ enum MJRefreshState: Int {
     case willRefresh //即将刷新的状态
     case noMoreData //所有数据加载完毕，没有更多的数据了
 }
-extension UILabel {
-    static func mj_label() -> UILabel {
-        let label = UILabel()
-        label.font = MJRefreshLabelFont
-        label.textColor = MJRefreshLabelTextColor
 
-        label.autoresizingMask = .flexibleWidth
-        label.textAlignment = .center
-        label.backgroundColor = UIColor.clear
-        
-        return label
-    }
-    
-    func mj_textWith() -> CGFloat {
-        
-        var stringWidth: CGFloat = 0.0
-        if let text = self.text {
-            if text.characters.count > 0 {
-                let  size = CGSize(width: CGFloat(MAXFLOAT), height: CGFloat(MAXFLOAT))
-                stringWidth = (self.text?.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName:self.font], context: nil).size.width)!
-            }
-        }
-       return stringWidth
-    }
-}
-
-
-
+/** 进入刷新状态的回调 */
 typealias MJRefreshComponentRefreshingBlock = ()->Void
+
+/** 开始刷新后的回调(进入刷新状态后的回调) */
 typealias MJRefreshComponentbeginRefreshingCompletionBlock = ()->Void
+
+/** 结束刷新后的回调 */
 typealias MJRefreshComponentEndRefreshingCompletionBlock = ()->Void
 
 
 class MJRefreshComponent: UIView {
     
 
-    var scrollViewOriginalInset = UIEdgeInsetsMake(0, 0, 0, 0)
+    var scrollViewOriginalInset = UIEdgeInsetsMake(0, 0, 0, 0) // 记录scrollView刚开始的inset
     
-    weak var scrollView: UIScrollView?
+    weak var scrollView: UIScrollView? // 父控件
     
-    var refreshingBlock: MJRefreshComponentRefreshingBlock?///正在刷新的回调
+    var refreshingBlock: MJRefreshComponentRefreshingBlock? // 正在刷新的回调
     
-    var beginRefreshingCompletionBlock: MJRefreshComponentbeginRefreshingCompletionBlock?///开始刷新后的回调(进入刷新状态后的回调)
+    var beginRefreshingCompletionBlock: MJRefreshComponentbeginRefreshingCompletionBlock? // 开始刷新后的回调(进入刷新状态后的回调)
     
-    var endRefreshingCompletionBlock: MJRefreshComponentEndRefreshingCompletionBlock? ///结束刷新的回调
+    var endRefreshingCompletionBlock: MJRefreshComponentEndRefreshingCompletionBlock? // 结束刷新的回调
+    
+    var pullingPercent: CGFloat = 0.0{
+        didSet{
+            if self.isRefreshing() {
+                return
+            }
+            
+            if self.autoChangeAlpha {
+                self.alpha = self.pullingPercent
+            }
+        }
+    }
+    
+    var state: MJRefreshState = .idle {
+        didSet{
+            DispatchQueue.main.async {
+                self.setNeedsLayout()
+            }
+        }
+    }
+    
+    var pan: UIPanGestureRecognizer?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -91,11 +91,23 @@ class MJRefreshComponent: UIView {
             return
         }
         
-        
-        
+        self.removeObservers()
+        if let  nsuperView = newSuperview{
+            self.mj_width = nsuperView.mj_width
+            self.mj_x = 0
+            self.scrollView = nsuperView as? UIScrollView
+            self.scrollView?.alwaysBounceVertical = true
+            self.scrollViewOriginalInset = (self.scrollView?.contentInset)!
+            self.addObservers()
+        }
         
     }
-    
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        if  self.state == .willRefresh{
+            self.state = .refreshing
+        }
+    }
     func executeRefreshingCallback() -> Void {
         DispatchQueue.main.async {
             if let refreshingBlock = self.refreshingBlock {
@@ -104,26 +116,6 @@ class MJRefreshComponent: UIView {
             
             if let beginRefreshingCompletionBlock = self.beginRefreshingCompletionBlock{
                 beginRefreshingCompletionBlock()
-            }
-        }
-    }
-    
-    var pullingPercent: CGFloat = 0.0{
-        didSet{
-            if self.isRefreshing() {
-                return
-            }
-            
-            if self.autoChangeAlpha {
-                self.alpha = self.pullingPercent
-            }
-        }
-    }
-    
-    var state: MJRefreshState = .idle {
-        didSet{
-            DispatchQueue.main.async {
-                self.setNeedsLayout()
             }
         }
     }
@@ -178,9 +170,6 @@ class MJRefreshComponent: UIView {
     }
     
     
-    var pan: UIPanGestureRecognizer?
-    
-    
     //MARK: - KVO监听
     func addObservers() -> Void {
         self.scrollView?.addObserver(self, forKeyPath: MJRefreshKeyPathContentOffset, options: [.new, .old], context: nil)
@@ -202,7 +191,7 @@ class MJRefreshComponent: UIView {
         }
         if let temKeyPath = keyPath  {
             if temKeyPath == MJRefreshKeyPathContentSize  {
-                
+                self.scrollViewContentSizeDidChange(change: change)
             }
             
             if self.isHidden {
@@ -210,9 +199,10 @@ class MJRefreshComponent: UIView {
             }
             
             if temKeyPath == MJRefreshKeyPathContentOffset {
+                self.scrollViewContentOffsetDidChange(change: change)
                 
             }else if temKeyPath == MJRefreshKeyPathPanState {
-                
+                self.scrollViewPanStateDidChange(change: change)
             }
         }
     }
@@ -238,3 +228,31 @@ class MJRefreshComponent: UIView {
     */
 
 }
+
+extension UILabel {
+    static func mj_label() -> UILabel {
+        let label = UILabel()
+        label.font = MJRefreshLabelFont
+        label.textColor = MJRefreshLabelTextColor
+        
+        label.autoresizingMask = .flexibleWidth
+        label.textAlignment = .center
+        label.backgroundColor = UIColor.clear
+        
+        return label
+    }
+    
+    func mj_textWith() -> CGFloat {
+        
+        var stringWidth: CGFloat = 0.0
+        if let text = self.text {
+            if text.characters.count > 0 {
+                let  size = CGSize(width: CGFloat(MAXFLOAT), height: CGFloat(MAXFLOAT))
+                stringWidth = (self.text?.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName:self.font], context: nil).size.width)!
+            }
+        }
+        return stringWidth
+    }
+}
+
+

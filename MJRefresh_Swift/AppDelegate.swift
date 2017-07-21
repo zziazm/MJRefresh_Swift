@@ -17,9 +17,18 @@ class Test: NSObject {
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+        var name: String?{
+            didSet{
+                
+            }
+        }
     
+    override init() {
+        super.init()
+    }
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
         return true
     }
 

@@ -29,7 +29,13 @@ class MJRefreshNormalHeader: MJRefreshStateHeader {
         loadingView.hidesWhenStopped = true
         return loadingView
     }()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
     
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     override func prepare() {
         super.prepare()
         self.addSubview(arrowView)
@@ -68,6 +74,7 @@ class MJRefreshNormalHeader: MJRefreshStateHeader {
     
     override var state: MJRefreshState{
         didSet{
+            
             if state == .idle {
                 if oldValue == .refreshing {
                     self.arrowView.transform = CGAffineTransform.identity

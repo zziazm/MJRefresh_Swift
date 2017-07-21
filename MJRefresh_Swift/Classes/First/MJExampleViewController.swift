@@ -24,7 +24,7 @@ let MJExample20 = "UICollectionView"
 let MJExample30 = "UIWebView"
 
 class MJExampleViewController: UITableViewController {
-
+    
     lazy var examples: [MJExample] = {
         var tem = [MJExample]()
         var exam0 = MJExample()
@@ -34,15 +34,16 @@ class MJExampleViewController: UITableViewController {
         tem.append(exam0)
         return tem
     }()
-    
-    
-    
-    
-    
-    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.tableView.mj_header = MJRefreshNormalHeader.header(refreshingBlock: { 
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2.0, execute: {
+                self.tableView.mj_header?.endRefreshing()
+            })
+        })
+        self.tableView.mj_header?.autoChangeAlpha = true
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -85,6 +86,13 @@ class MJExampleViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let exam = examples[section]
         return exam.header
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
     }
     
 
