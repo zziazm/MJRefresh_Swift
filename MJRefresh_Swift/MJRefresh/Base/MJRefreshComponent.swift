@@ -64,7 +64,6 @@ class MJRefreshComponent: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.prepare()
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -117,6 +116,13 @@ class MJRefreshComponent: UIView {
             if let beginRefreshingCompletionBlock = self.beginRefreshingCompletionBlock{
                 beginRefreshingCompletionBlock()
             }
+            
+            if let refreshingAction = self.refreshingAction{
+               let  control = UIControl()
+               control.sendAction(refreshingAction, to: self.refreshingTarget, for: nil)
+             
+            }
+            
         }
     }
     
@@ -179,8 +185,8 @@ class MJRefreshComponent: UIView {
     }
     
     func removeObservers() -> Void {
-        self.scrollView?.removeObserver(self, forKeyPath: MJRefreshKeyPathContentOffset)
-        self.scrollView?.removeObserver(self, forKeyPath: MJRefreshKeyPathContentSize)
+        self.superview?.removeObserver(self, forKeyPath: MJRefreshKeyPathContentOffset)
+        self.superview?.removeObserver(self, forKeyPath: MJRefreshKeyPathContentSize)
         self.pan?.removeObserver(self, forKeyPath: MJRefreshKeyPathPanState)
         self.pan = nil
     }
@@ -217,6 +223,12 @@ class MJRefreshComponent: UIView {
     
     func scrollViewPanStateDidChange(change:[NSKeyValueChangeKey : Any]?) -> Void {
         
+    }
+    var refreshingTarget: Any?
+    var refreshingAction: Selector?
+    func set(refreshingTarget: Any?, action: Selector) -> Void {
+        self.refreshingTarget = refreshingTarget
+        self.refreshingAction = action
     }
     
     /*

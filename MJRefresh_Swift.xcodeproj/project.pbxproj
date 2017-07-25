@@ -16,6 +16,8 @@
 		980063F51F21913B007EEDE7 /* UIScrollView+MJRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980063F41F21913B007EEDE7 /* UIScrollView+MJRefresh.swift */; };
 		980064341F21E1C4007EEDE7 /* UIView+MJExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980064331F21E1C4007EEDE7 /* UIView+MJExtension.swift */; };
 		980064371F21FB97007EEDE7 /* MJTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980064361F21FB97007EEDE7 /* MJTableViewController.swift */; };
+		980322451F25D64A006DBBA4 /* MJRefreshGifHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980322441F25D64A006DBBA4 /* MJRefreshGifHeader.swift */; };
+		980322471F26EE89006DBBA4 /* MJChiBaoZiHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980322461F26EE89006DBBA4 /* MJChiBaoZiHeader.swift */; };
 		983F58721F1EF8250027F12E /* MJExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983F58711F1EF8250027F12E /* MJExampleViewController.swift */; };
 		989FA6FA1F18AC4C0068BA0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989FA6F91F18AC4C0068BA0F /* AppDelegate.swift */; };
 		989FA6FC1F18AC4C0068BA0F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989FA6FB1F18AC4C0068BA0F /* ViewController.swift */; };
@@ -53,6 +55,8 @@
 		980063F41F21913B007EEDE7 /* UIScrollView+MJRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+MJRefresh.swift"; sourceTree = "<group>"; };
 		980064331F21E1C4007EEDE7 /* UIView+MJExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+MJExtension.swift"; sourceTree = "<group>"; };
 		980064361F21FB97007EEDE7 /* MJTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJTableViewController.swift; sourceTree = "<group>"; };
+		980322441F25D64A006DBBA4 /* MJRefreshGifHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJRefreshGifHeader.swift; sourceTree = "<group>"; };
+		980322461F26EE89006DBBA4 /* MJChiBaoZiHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJChiBaoZiHeader.swift; sourceTree = "<group>"; };
 		983F58711F1EF8250027F12E /* MJExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJExampleViewController.swift; sourceTree = "<group>"; };
 		989FA6F61F18AC4C0068BA0F /* MJRefresh_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MJRefresh_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		989FA6F91F18AC4C0068BA0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 			children = (
 				980063EB1F207CEC007EEDE7 /* MJRefreshStateHeader.swift */,
 				980063EF1F209B1B007EEDE7 /* MJRefreshNormalHeader.swift */,
+				980322441F25D64A006DBBA4 /* MJRefreshGifHeader.swift */,
 			);
 			path = Header;
 			sourceTree = "<group>";
@@ -136,9 +141,18 @@
 			path = Second;
 			sourceTree = "<group>";
 		};
+		980322431F25D60C006DBBA4 /* DIY */ = {
+			isa = PBXGroup;
+			children = (
+				980322461F26EE89006DBBA4 /* MJChiBaoZiHeader.swift */,
+			);
+			path = DIY;
+			sourceTree = "<group>";
+		};
 		983F586E1F1EF7DC0027F12E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				980322431F25D60C006DBBA4 /* DIY */,
 				980064351F21FB83007EEDE7 /* Second */,
 				983F58701F1EF7F60027F12E /* First */,
 			);
@@ -355,6 +369,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				980322451F25D64A006DBBA4 /* MJRefreshGifHeader.swift in Sources */,
 				9800636A1F1F0002007EEDE7 /* MJRefreshComponent.swift in Sources */,
 				9800636C1F1F04FF007EEDE7 /* MJRefreshConst.swift in Sources */,
 				980063F51F21913B007EEDE7 /* UIScrollView+MJRefresh.swift in Sources */,
@@ -363,6 +378,7 @@
 				989FA6FC1F18AC4C0068BA0F /* ViewController.swift in Sources */,
 				983F58721F1EF8250027F12E /* MJExampleViewController.swift in Sources */,
 				980063F01F209B1B007EEDE7 /* MJRefreshNormalHeader.swift in Sources */,
+				980322471F26EE89006DBBA4 /* MJChiBaoZiHeader.swift in Sources */,
 				980064371F21FB97007EEDE7 /* MJTableViewController.swift in Sources */,
 				989FA6FA1F18AC4C0068BA0F /* AppDelegate.swift in Sources */,
 				980064341F21E1C4007EEDE7 /* UIView+MJExtension.swift in Sources */,
