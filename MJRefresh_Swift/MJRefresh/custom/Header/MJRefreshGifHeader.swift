@@ -53,7 +53,7 @@ class MJRefreshGifHeader: MJRefreshStateHeader {
             print(index, pullingPercent)
 
             if index >= images.count {
-                index = images.count - 1
+                index = images.count  - 1
             }
             print(index, pullingPercent)
             self.gifView.image = images[index]

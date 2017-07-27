@@ -46,21 +46,60 @@ class MJTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     func example01() -> Void {
-        self.tableView.mj_header = MJRefreshNormalHeader.header(refreshingBlock: { [weak self] in
+        self.tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: { [weak self] in
             if let strongSelf = self{
                 strongSelf.loadNewData()
             }
-            
         })
-        
         self.tableView.mj_header?.beginRefreshing()
     }
     
     func example02() -> Void {
-        self.tableView.mj_header = MJChiBaoZiHeader.header(target: self, refreshingAction:#selector(self.loadNewData))
+        self.tableView.mj_header = MJChiBaoZiHeader(target: self, refreshingAction: #selector(self.loadNewData))//MJChiBaoZiHeader.header(target: self, refreshingAction:#selector(self.loadNewData))
         self.tableView.mj_header?.beginRefreshing()
+    }
+    
+    func example03() -> Void {
+        let header = MJRefreshNormalHeader(target: self, refreshingAction: #selector(self.loadNewData))//MJRefreshNormalHeader.header(target: self, refreshingAction: #selector(self.loadNewData)) as! MJRefreshNormalHeader
+        header.autoChangeAlpha = true
+        header.lastUpdatedTimeLabel.isHidden = true
+        header.beginRefreshing()
+        
+        self.tableView.mj_header = header
+    }
+    
+    func example04() -> Void {
+        let header = MJChiBaoZiHeader(target: self, refreshingAction: #selector(self.loadNewData))
+        header.lastUpdatedTimeLabel.isHidden = true
+        header.stateLabel.isHidden = true
+        header.beginRefreshing()
+        
+        self.tableView.mj_header = header
+    }
+    
+    func example05() -> Void {
+        let header = MJRefreshNormalHeader(target: self, refreshingAction: #selector(self.loadNewData))
+        header.setTitle(title: "Pull down to refresh", forState: .idle)
+        header.setTitle(title: "Release to refresh", forState: .pulling)
+        header.setTitle(title: "Loading ...", forState: .refreshing)
+        
+        header.stateLabel.font = UIFont.systemFont(ofSize: 15)
+        header.lastUpdatedTimeLabel.font = UIFont.systemFont(ofSize: 14)
+        
+        header.stateLabel.textColor = UIColor.red
+        header.lastUpdatedTimeLabel.textColor = UIColor.blue
+        
+        header.beginRefreshing()
+        
+        self.tableView.mj_header = header
         
     }
+    
+    func example06() -> Void {
+        self.tableView.mj_header = MJDIYHeader(target: self, refreshingAction: #selector(self.loadNewData))
+        self.tableView.mj_header?.beginRefreshing()
+    }
+    
     lazy var data: [String] = {
         var data = Array<String>()
         for i in 0...4{
@@ -68,6 +107,7 @@ class MJTableViewController: UITableViewController {
         }
         return data
     }()
+    
     func loadNewData() -> Void {
         for _ in 0...4 {
             data.append(MJRandomData())
@@ -78,13 +118,13 @@ class MJTableViewController: UITableViewController {
             self?.tableView.mj_header?.endRefreshing()
         }
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1

@@ -33,6 +33,9 @@ class MJExampleViewController: UITableViewController {
         exam0.titles = ["默认", "动画图片", "隐藏时间", "隐藏状态和时间", "自定义文字", "自定义刷新控件"]
         exam0.methods = ["example01", "example02", "example03", "example04", "example05", "example06"]
         tem.append(exam0)
+        
+       
+        
         return tem
     }()
  
