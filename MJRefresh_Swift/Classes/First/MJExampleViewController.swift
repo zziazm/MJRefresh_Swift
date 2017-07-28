@@ -34,19 +34,28 @@ class MJExampleViewController: UITableViewController {
         exam0.methods = ["example01", "example02", "example03", "example04", "example05", "example06"]
         tem.append(exam0)
         
-       
-        
+        var exam1 = MJExample()
+        exam1.header = "UITableView + 上拉刷新"
+        exam1.vcClass = MJTableViewController.self
+        exam1.titles = ["默认", "动画图片", "隐藏刷新状态的文字", "全部加载完毕", "禁止自动加载", "自定义文字", "加载后隐藏", "自动回弹的上拉01", "自动回弹的上拉02", "自定义刷新控件(自动刷新)", "自定义刷新控件(自动回弹)"]
+        tem.append(exam1)
         return tem
     }()
  
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.mj_header = MJRefreshNormalHeader.header(refreshingBlock: { 
+        self.tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2.0, execute: {
                 self.tableView.mj_header?.endRefreshing()
             })
         })
         self.tableView.mj_header?.autoChangeAlpha = true
+        
+        self.tableView.mj_footer = MJRefreshBackNormalFooter(refreshingBlock: {
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2.0, execute: { 
+                self.tableView.mj_footer?.endRefreshing()
+            })
+        })
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -102,8 +111,9 @@ class MJExampleViewController: UITableViewController {
         }
         
     }
+    
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
+        let t = self.tableView.mj_footer as? MJRefreshBackNormalFooter
     }
     
 

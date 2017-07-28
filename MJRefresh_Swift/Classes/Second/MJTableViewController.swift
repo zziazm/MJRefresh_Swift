@@ -45,6 +45,8 @@ class MJTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    //MARK: -- UITableView + 下拉刷新 自定义刷新控件
     func example01() -> Void {
         self.tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: { [weak self] in
             if let strongSelf = self{
@@ -98,6 +100,13 @@ class MJTableViewController: UITableViewController {
     func example06() -> Void {
         self.tableView.mj_header = MJDIYHeader(target: self, refreshingAction: #selector(self.loadNewData))
         self.tableView.mj_header?.beginRefreshing()
+    }
+    
+    //MARK: -- UITableView + 上拉刷新 默认
+    func example11() -> Void {
+        self.example01()
+        
+//        self.tableView.mj_footer =
     }
     
     lazy var data: [String] = {

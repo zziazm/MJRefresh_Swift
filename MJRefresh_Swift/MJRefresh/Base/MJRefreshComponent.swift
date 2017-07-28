@@ -191,6 +191,9 @@ class MJRefreshComponent: UIView {
         self.pan = nil
     }
     
+    
+    
+
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if !self.isUserInteractionEnabled {
             return
