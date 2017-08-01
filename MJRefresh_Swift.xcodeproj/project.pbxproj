@@ -18,6 +18,8 @@
 		980064371F21FB97007EEDE7 /* MJTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980064361F21FB97007EEDE7 /* MJTableViewController.swift */; };
 		980322451F25D64A006DBBA4 /* MJRefreshGifHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980322441F25D64A006DBBA4 /* MJRefreshGifHeader.swift */; };
 		980322471F26EE89006DBBA4 /* MJChiBaoZiHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980322461F26EE89006DBBA4 /* MJChiBaoZiHeader.swift */; };
+		98113B7E1F2EC19900BF9F95 /* MJRefreshAutoStateFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98113B7D1F2EC19900BF9F95 /* MJRefreshAutoStateFooter.swift */; };
+		98113B801F2EC9D900BF9F95 /* MJRefreshAutoNormalFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98113B7F1F2EC9D900BF9F95 /* MJRefreshAutoNormalFooter.swift */; };
 		983F58721F1EF8250027F12E /* MJExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983F58711F1EF8250027F12E /* MJExampleViewController.swift */; };
 		989FA6FA1F18AC4C0068BA0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989FA6F91F18AC4C0068BA0F /* AppDelegate.swift */; };
 		989FA6FC1F18AC4C0068BA0F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989FA6FB1F18AC4C0068BA0F /* ViewController.swift */; };
@@ -63,6 +65,8 @@
 		980064361F21FB97007EEDE7 /* MJTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJTableViewController.swift; sourceTree = "<group>"; };
 		980322441F25D64A006DBBA4 /* MJRefreshGifHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJRefreshGifHeader.swift; sourceTree = "<group>"; };
 		980322461F26EE89006DBBA4 /* MJChiBaoZiHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJChiBaoZiHeader.swift; sourceTree = "<group>"; };
+		98113B7D1F2EC19900BF9F95 /* MJRefreshAutoStateFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJRefreshAutoStateFooter.swift; sourceTree = "<group>"; };
+		98113B7F1F2EC9D900BF9F95 /* MJRefreshAutoNormalFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJRefreshAutoNormalFooter.swift; sourceTree = "<group>"; };
 		983F58711F1EF8250027F12E /* MJExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJExampleViewController.swift; sourceTree = "<group>"; };
 		989FA6F61F18AC4C0068BA0F /* MJRefresh_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MJRefresh_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		989FA6F91F18AC4C0068BA0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -254,6 +258,8 @@
 		98EB34E71F2ADBD800B35C2A /* Auto */ = {
 			isa = PBXGroup;
 			children = (
+				98113B7D1F2EC19900BF9F95 /* MJRefreshAutoStateFooter.swift */,
+				98113B7F1F2EC9D900BF9F95 /* MJRefreshAutoNormalFooter.swift */,
 			);
 			path = Auto;
 			sourceTree = "<group>";
@@ -415,6 +421,8 @@
 				98EB34EE1F2B25B600B35C2A /* MJRefreshAutoFooter.swift in Sources */,
 				98EB34EA1F2ADBED00B35C2A /* MJRefreshBackStateFooter.swift in Sources */,
 				983F58721F1EF8250027F12E /* MJExampleViewController.swift in Sources */,
+				98113B801F2EC9D900BF9F95 /* MJRefreshAutoNormalFooter.swift in Sources */,
+				98113B7E1F2EC19900BF9F95 /* MJRefreshAutoStateFooter.swift in Sources */,
 				98EB34E61F29D9AA00B35C2A /* MJRefreshBackFooter.swift in Sources */,
 				980063F01F209B1B007EEDE7 /* MJRefreshNormalHeader.swift in Sources */,
 				98EB34EC1F2ADF1600B35C2A /* MJRefreshBackNormalFooter.swift in Sources */,

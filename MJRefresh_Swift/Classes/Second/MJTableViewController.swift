@@ -75,7 +75,6 @@ class MJTableViewController: UITableViewController {
         header.lastUpdatedTimeLabel.isHidden = true
         header.stateLabel.isHidden = true
         header.beginRefreshing()
-        
         self.tableView.mj_header = header
     }
     
@@ -87,14 +86,10 @@ class MJTableViewController: UITableViewController {
         
         header.stateLabel.font = UIFont.systemFont(ofSize: 15)
         header.lastUpdatedTimeLabel.font = UIFont.systemFont(ofSize: 14)
-        
         header.stateLabel.textColor = UIColor.red
         header.lastUpdatedTimeLabel.textColor = UIColor.blue
-        
         header.beginRefreshing()
-        
         self.tableView.mj_header = header
-        
     }
     
     func example06() -> Void {
@@ -105,8 +100,11 @@ class MJTableViewController: UITableViewController {
     //MARK: -- UITableView + 上拉刷新 默认
     func example11() -> Void {
         self.example01()
-        
-//        self.tableView.mj_footer =
+        self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: { 
+           [weak self] in
+            self?.loadMoreData()
+            
+        })
     }
     
     lazy var data: [String] = {
@@ -125,6 +123,18 @@ class MJTableViewController: UITableViewController {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {[weak self] in
             self?.tableView.reloadData()
             self?.tableView.mj_header?.endRefreshing()
+        }
+    }
+    
+    func loadMoreData() -> Void {
+        for _ in 0..<5 {
+          self.data.append(MJRandomData())
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()) { [weak self] in
+           self?.tableView.reloadData()
+           self?.tableView.mj_footer?.endRefreshing()
+            
         }
     }
     

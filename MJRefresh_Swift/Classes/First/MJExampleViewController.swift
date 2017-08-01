@@ -38,6 +38,7 @@ class MJExampleViewController: UITableViewController {
         exam1.header = "UITableView + 上拉刷新"
         exam1.vcClass = MJTableViewController.self
         exam1.titles = ["默认", "动画图片", "隐藏刷新状态的文字", "全部加载完毕", "禁止自动加载", "自定义文字", "加载后隐藏", "自动回弹的上拉01", "自动回弹的上拉02", "自定义刷新控件(自动刷新)", "自定义刷新控件(自动回弹)"]
+        exam1.methods = ["example11", "example12", "example13", "example14", "example15", "example16", "example17", "example18", "example19", "example20", "example21"]
         tem.append(exam1)
         return tem
     }()

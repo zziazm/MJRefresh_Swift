@@ -37,3 +37,8 @@ let MJRefreshBackFooterIdleText = "MJRefreshBackFooterIdleText"
 let MJRefreshBackFooterPullingText = "MJRefreshBackFooterPullingText"
 let MJRefreshBackFooterRefreshingText = "MJRefreshBackFooterRefreshingText"
 let MJRefreshBackFooterNoMoreDataText = "MJRefreshBackFooterNoMoreDataText"
+
+let MJRefreshAutoFooterIdleText = "MJRefreshAutoFooterIdleText"
+let MJRefreshAutoFooterRefreshingText = "MJRefreshAutoFooterRefreshingText"
+let MJRefreshAutoFooterNoMoreDataText = "MJRefreshAutoFooterNoMoreDataText"
+
