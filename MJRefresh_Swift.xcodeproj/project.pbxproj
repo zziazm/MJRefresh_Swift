@@ -20,6 +20,7 @@
 		980322471F26EE89006DBBA4 /* MJChiBaoZiHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980322461F26EE89006DBBA4 /* MJChiBaoZiHeader.swift */; };
 		98113B7E1F2EC19900BF9F95 /* MJRefreshAutoStateFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98113B7D1F2EC19900BF9F95 /* MJRefreshAutoStateFooter.swift */; };
 		98113B801F2EC9D900BF9F95 /* MJRefreshAutoNormalFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98113B7F1F2EC9D900BF9F95 /* MJRefreshAutoNormalFooter.swift */; };
+		98113BC11F301C5300BF9F95 /* MJRefreshAutoGifFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98113BC01F301C5300BF9F95 /* MJRefreshAutoGifFooter.swift */; };
 		983F58721F1EF8250027F12E /* MJExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983F58711F1EF8250027F12E /* MJExampleViewController.swift */; };
 		989FA6FA1F18AC4C0068BA0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989FA6F91F18AC4C0068BA0F /* AppDelegate.swift */; };
 		989FA6FC1F18AC4C0068BA0F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989FA6FB1F18AC4C0068BA0F /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 		989FA7041F18AC4C0068BA0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 989FA7021F18AC4C0068BA0F /* LaunchScreen.storyboard */; };
 		989FA70F1F18AC4C0068BA0F /* MJRefresh_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989FA70E1F18AC4C0068BA0F /* MJRefresh_SwiftTests.swift */; };
 		989FA71A1F18AC4C0068BA0F /* MJRefresh_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989FA7191F18AC4C0068BA0F /* MJRefresh_SwiftUITests.swift */; };
+		98B108371F302AD500CAEC17 /* MJChiBaoZiFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B108361F302AD500CAEC17 /* MJChiBaoZiFooter.swift */; };
 		98D776591F298851000AC7DC /* MJDIYHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D776581F298851000AC7DC /* MJDIYHeader.swift */; };
 		98EB34E41F29C94500B35C2A /* MJRefreshFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EB34E31F29C94500B35C2A /* MJRefreshFooter.swift */; };
 		98EB34E61F29D9AA00B35C2A /* MJRefreshBackFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EB34E51F29D9AA00B35C2A /* MJRefreshBackFooter.swift */; };
@@ -67,6 +69,7 @@
 		980322461F26EE89006DBBA4 /* MJChiBaoZiHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJChiBaoZiHeader.swift; sourceTree = "<group>"; };
 		98113B7D1F2EC19900BF9F95 /* MJRefreshAutoStateFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJRefreshAutoStateFooter.swift; sourceTree = "<group>"; };
 		98113B7F1F2EC9D900BF9F95 /* MJRefreshAutoNormalFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJRefreshAutoNormalFooter.swift; sourceTree = "<group>"; };
+		98113BC01F301C5300BF9F95 /* MJRefreshAutoGifFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJRefreshAutoGifFooter.swift; sourceTree = "<group>"; };
 		983F58711F1EF8250027F12E /* MJExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJExampleViewController.swift; sourceTree = "<group>"; };
 		989FA6F61F18AC4C0068BA0F /* MJRefresh_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MJRefresh_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		989FA6F91F18AC4C0068BA0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +84,7 @@
 		989FA7151F18AC4C0068BA0F /* MJRefresh_SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MJRefresh_SwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		989FA7191F18AC4C0068BA0F /* MJRefresh_SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MJRefresh_SwiftUITests.swift; sourceTree = "<group>"; };
 		989FA71B1F18AC4C0068BA0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98B108361F302AD500CAEC17 /* MJChiBaoZiFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJChiBaoZiFooter.swift; sourceTree = "<group>"; };
 		98D776581F298851000AC7DC /* MJDIYHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJDIYHeader.swift; sourceTree = "<group>"; };
 		98EB34E31F29C94500B35C2A /* MJRefreshFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJRefreshFooter.swift; sourceTree = "<group>"; };
 		98EB34E51F29D9AA00B35C2A /* MJRefreshBackFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJRefreshBackFooter.swift; sourceTree = "<group>"; };
@@ -167,6 +171,7 @@
 			children = (
 				980322461F26EE89006DBBA4 /* MJChiBaoZiHeader.swift */,
 				98D776581F298851000AC7DC /* MJDIYHeader.swift */,
+				98B108361F302AD500CAEC17 /* MJChiBaoZiFooter.swift */,
 			);
 			path = DIY;
 			sourceTree = "<group>";
@@ -260,6 +265,7 @@
 			children = (
 				98113B7D1F2EC19900BF9F95 /* MJRefreshAutoStateFooter.swift */,
 				98113B7F1F2EC9D900BF9F95 /* MJRefreshAutoNormalFooter.swift */,
+				98113BC01F301C5300BF9F95 /* MJRefreshAutoGifFooter.swift */,
 			);
 			path = Auto;
 			sourceTree = "<group>";
@@ -409,9 +415,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98B108371F302AD500CAEC17 /* MJChiBaoZiFooter.swift in Sources */,
 				980322451F25D64A006DBBA4 /* MJRefreshGifHeader.swift in Sources */,
 				9800636A1F1F0002007EEDE7 /* MJRefreshComponent.swift in Sources */,
 				98D776591F298851000AC7DC /* MJDIYHeader.swift in Sources */,
+				98113BC11F301C5300BF9F95 /* MJRefreshAutoGifFooter.swift in Sources */,
 				98EB34E41F29C94500B35C2A /* MJRefreshFooter.swift in Sources */,
 				9800636C1F1F04FF007EEDE7 /* MJRefreshConst.swift in Sources */,
 				980063F51F21913B007EEDE7 /* UIScrollView+MJRefresh.swift in Sources */,

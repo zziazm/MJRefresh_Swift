@@ -24,6 +24,7 @@ class MJRefreshAutoNormalFooter: MJRefreshAutoStateFooter {
     
     override func prepare() {
         super.prepare()
+        self.addSubview(loadingView)
         
     }
     

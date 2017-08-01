@@ -83,9 +83,6 @@ class MJExampleViewController: UITableViewController {
         return exam.titles!.count
     }
     
-    
-
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "example", for: indexPath)
 

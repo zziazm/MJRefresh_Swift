@@ -27,6 +27,9 @@ class MJRefreshBackFooter: MJRefreshFooter {
         if self.state == .refreshing  {
             return
         }
+        if let contentInset = self.scrollView?.contentInset{
+            self.scrollViewOriginalInset = contentInset
+        }
         if let scrollView = self.scrollView {
             let currentOffsetY = scrollView.mj_offsetY
             let happenOffsetY = self.happenOffsetY()
@@ -125,7 +128,6 @@ class MJRefreshBackFooter: MJRefreshFooter {
                     }
                     
                     self.lastBottomDelta = bottom - scrollView.mj_insetBottom
-                    
                     scrollView.mj_insetBottom = bottom
                     scrollView.mj_offsetY = self.happenOffsetY() + self.mj_height
                     

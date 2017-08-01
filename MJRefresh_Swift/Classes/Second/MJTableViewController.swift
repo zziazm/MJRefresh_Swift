@@ -107,6 +107,89 @@ class MJTableViewController: UITableViewController {
         })
     }
     
+    func example12() -> Void {
+        self.example01()
+        self.tableView.mj_footer = MJChiBaoZiFooter(refreshingTarget: self, refreshingAction: #selector(self.loadMoreData))
+    }
+    
+    func example13() -> Void {
+        self.example01()
+        
+        let footer = MJChiBaoZiFooter(refreshingTarget: self, refreshingAction: #selector(self.loadMoreData))
+        footer.refreshingTitleHidden = true
+        self.tableView.mj_footer = footer
+    }
+    
+    func example14() -> Void {
+        self.example01()
+        self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: #selector(self.loadLastData))
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "恢复数据加载", style: .done, target: self, action: #selector(reset))
+    }
+    
+    func example15() -> Void {
+        self.example01()
+        let footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: #selector(self.loadMoreData))
+        footer.automaticallyRefresh = false
+        self.tableView.mj_footer = footer
+    }
+    
+    func example16() -> Void {
+        self.example01()
+        let footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: #selector(self.loadMoreData))
+        footer.set(title: "Click or drag up to refresh", for: .idle)
+        footer.set(title: "Loading more ...", for: .refreshing)
+        footer.set(title: "No more data", for: .noMoreData)
+        
+        footer.stateLabel.font = UIFont.systemFont(ofSize: 17)
+        
+        footer.stateLabel.textColor = UIColor.blue
+        
+        self.tableView.mj_footer = footer
+    }
+    
+    func example17() -> Void {
+        self.example01()
+        self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: #selector(loadOnceData))
+        
+    }
+    
+    func example18() -> Void {
+        self.example01()
+        self.tableView.mj_footer = MJRefreshBackNormalFooter(refreshingTarget: self, refreshingAction: #selector(self.loadMoreData))
+        self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 30, right: 0)
+        self.tableView.mj_footer?.ignoredScrollViewContentInsetBottom = 30
+    }
+    
+    func loadOnceData() -> Void {
+        for _ in 0..<5 {
+            self.data.append(MJRandomData())
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()) { 
+            [weak self] in
+            self?.tableView.reloadData()
+            self?.tableView.mj_footer?.isHidden = true
+        }
+    }
+    
+    func reset() -> Void {
+        self.tableView.mj_footer?.set(refreshingTarget: self, action: #selector(loadMoreData))
+        self.tableView.mj_footer?.resetNoMoreData()
+    }
+    
+    func loadLastData() -> Void {
+        for _ in 0..<5 {
+            self.data.append(MJRandomData())
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+            [weak self] in
+            self?.tableView.reloadData()
+            self?.tableView.mj_footer?.endRefreshingWithNoMoreData()
+        }
+    }
+    
     lazy var data: [String] = {
         var data = Array<String>()
         for i in 0...4{
@@ -131,7 +214,7 @@ class MJTableViewController: UITableViewController {
           self.data.append(MJRandomData())
         }
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) { [weak self] in
            self?.tableView.reloadData()
            self?.tableView.mj_footer?.endRefreshing()
             
@@ -161,6 +244,9 @@ class MJTableViewController: UITableViewController {
         // Configure the cell...
 
         return cell
+    }
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
     }
     
 
