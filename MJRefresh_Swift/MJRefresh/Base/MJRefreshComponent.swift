@@ -81,7 +81,7 @@ class MJRefreshComponent: UIView {
     }
     
     func placeSubviews() -> Void {
-        
+
     }
     
     override func willMove(toSuperview newSuperview: UIView?) {
@@ -98,8 +98,8 @@ class MJRefreshComponent: UIView {
             self.scrollView?.alwaysBounceVertical = true
             self.scrollViewOriginalInset = (self.scrollView?.contentInset)!
             self.addObservers()
+            self.state = .idle
         }
-        
     }
     override func draw(_ rect: CGRect) {
         super.draw(rect)

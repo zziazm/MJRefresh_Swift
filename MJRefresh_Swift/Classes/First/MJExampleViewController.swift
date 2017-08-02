@@ -40,6 +40,21 @@ class MJExampleViewController: UITableViewController {
         exam1.titles = ["默认", "动画图片", "隐藏刷新状态的文字", "全部加载完毕", "禁止自动加载", "自定义文字", "加载后隐藏", "自动回弹的上拉01", "自动回弹的上拉02", "自定义刷新控件(自动刷新)", "自定义刷新控件(自动回弹)"]
         exam1.methods = ["example11", "example12", "example13", "example14", "example15", "example16", "example17", "example18", "example19", "example20", "example21"]
         tem.append(exam1)
+        
+        var exam2 = MJExample()
+        exam2.header = MJExample20
+        exam2.vcClass = MJCollectionViewController.self
+        exam2.titles = ["上下拉刷新"]
+        exam2.methods = ["example21"]
+        tem.append(exam2)
+        
+        var exam3 = MJExample()
+        exam3.header = MJExample30
+        exam3.vcClass = MJWebViewViewController.self
+        exam3.titles = ["下拉刷新"]
+        exam3.methods = ["example31"]
+        tem.append(exam3)
+        
         return tem
     }()
  
@@ -64,7 +79,7 @@ class MJExampleViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

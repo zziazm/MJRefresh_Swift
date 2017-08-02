@@ -30,6 +30,13 @@
 		989FA70F1F18AC4C0068BA0F /* MJRefresh_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989FA70E1F18AC4C0068BA0F /* MJRefresh_SwiftTests.swift */; };
 		989FA71A1F18AC4C0068BA0F /* MJRefresh_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989FA7191F18AC4C0068BA0F /* MJRefresh_SwiftUITests.swift */; };
 		98B108371F302AD500CAEC17 /* MJChiBaoZiFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B108361F302AD500CAEC17 /* MJChiBaoZiFooter.swift */; };
+		98B108391F3165FD00CAEC17 /* MJChiBaoZiFooter2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B108381F3165FD00CAEC17 /* MJChiBaoZiFooter2.swift */; };
+		98B1083B1F31663600CAEC17 /* MJRefreshBackGifFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1083A1F31663600CAEC17 /* MJRefreshBackGifFooter.swift */; };
+		98B1083D1F31721A00CAEC17 /* MJDIYAutoFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1083C1F31721A00CAEC17 /* MJDIYAutoFooter.swift */; };
+		98B1083F1F317BE500CAEC17 /* MJDIYBackFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1083E1F317BE500CAEC17 /* MJDIYBackFooter.swift */; };
+		98B108411F31AB2500CAEC17 /* MJCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B108401F31AB2500CAEC17 /* MJCollectionViewController.swift */; };
+		98B108441F31B2D000CAEC17 /* MJWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B108421F31B2D000CAEC17 /* MJWebViewViewController.swift */; };
+		98B108451F31B2D000CAEC17 /* MJWebViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B108431F31B2D000CAEC17 /* MJWebViewViewController.xib */; };
 		98D776591F298851000AC7DC /* MJDIYHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D776581F298851000AC7DC /* MJDIYHeader.swift */; };
 		98EB34E41F29C94500B35C2A /* MJRefreshFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EB34E31F29C94500B35C2A /* MJRefreshFooter.swift */; };
 		98EB34E61F29D9AA00B35C2A /* MJRefreshBackFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EB34E51F29D9AA00B35C2A /* MJRefreshBackFooter.swift */; };
@@ -85,6 +92,13 @@
 		989FA7191F18AC4C0068BA0F /* MJRefresh_SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MJRefresh_SwiftUITests.swift; sourceTree = "<group>"; };
 		989FA71B1F18AC4C0068BA0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98B108361F302AD500CAEC17 /* MJChiBaoZiFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJChiBaoZiFooter.swift; sourceTree = "<group>"; };
+		98B108381F3165FD00CAEC17 /* MJChiBaoZiFooter2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJChiBaoZiFooter2.swift; sourceTree = "<group>"; };
+		98B1083A1F31663600CAEC17 /* MJRefreshBackGifFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJRefreshBackGifFooter.swift; sourceTree = "<group>"; };
+		98B1083C1F31721A00CAEC17 /* MJDIYAutoFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJDIYAutoFooter.swift; sourceTree = "<group>"; };
+		98B1083E1F317BE500CAEC17 /* MJDIYBackFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJDIYBackFooter.swift; sourceTree = "<group>"; };
+		98B108401F31AB2500CAEC17 /* MJCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJCollectionViewController.swift; sourceTree = "<group>"; };
+		98B108421F31B2D000CAEC17 /* MJWebViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJWebViewViewController.swift; sourceTree = "<group>"; };
+		98B108431F31B2D000CAEC17 /* MJWebViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MJWebViewViewController.xib; sourceTree = "<group>"; };
 		98D776581F298851000AC7DC /* MJDIYHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJDIYHeader.swift; sourceTree = "<group>"; };
 		98EB34E31F29C94500B35C2A /* MJRefreshFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJRefreshFooter.swift; sourceTree = "<group>"; };
 		98EB34E51F29D9AA00B35C2A /* MJRefreshBackFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJRefreshBackFooter.swift; sourceTree = "<group>"; };
@@ -162,6 +176,9 @@
 			isa = PBXGroup;
 			children = (
 				980064361F21FB97007EEDE7 /* MJTableViewController.swift */,
+				98B108401F31AB2500CAEC17 /* MJCollectionViewController.swift */,
+				98B108421F31B2D000CAEC17 /* MJWebViewViewController.swift */,
+				98B108431F31B2D000CAEC17 /* MJWebViewViewController.xib */,
 			);
 			path = Second;
 			sourceTree = "<group>";
@@ -172,6 +189,9 @@
 				980322461F26EE89006DBBA4 /* MJChiBaoZiHeader.swift */,
 				98D776581F298851000AC7DC /* MJDIYHeader.swift */,
 				98B108361F302AD500CAEC17 /* MJChiBaoZiFooter.swift */,
+				98B108381F3165FD00CAEC17 /* MJChiBaoZiFooter2.swift */,
+				98B1083C1F31721A00CAEC17 /* MJDIYAutoFooter.swift */,
+				98B1083E1F317BE500CAEC17 /* MJDIYBackFooter.swift */,
 			);
 			path = DIY;
 			sourceTree = "<group>";
@@ -275,6 +295,7 @@
 			children = (
 				98EB34E91F2ADBED00B35C2A /* MJRefreshBackStateFooter.swift */,
 				98EB34EB1F2ADF1600B35C2A /* MJRefreshBackNormalFooter.swift */,
+				98B1083A1F31663600CAEC17 /* MJRefreshBackGifFooter.swift */,
 			);
 			path = Back;
 			sourceTree = "<group>";
@@ -388,6 +409,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				989FA7041F18AC4C0068BA0F /* LaunchScreen.storyboard in Resources */,
+				98B108451F31B2D000CAEC17 /* MJWebViewViewController.xib in Resources */,
 				989FA7011F18AC4C0068BA0F /* Assets.xcassets in Resources */,
 				980063EE1F208974007EEDE7 /* MJRefresh.bundle in Resources */,
 				989FA6FF1F18AC4C0068BA0F /* Main.storyboard in Resources */,
@@ -415,7 +437,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98B1083F1F317BE500CAEC17 /* MJDIYBackFooter.swift in Sources */,
 				98B108371F302AD500CAEC17 /* MJChiBaoZiFooter.swift in Sources */,
+				98B108441F31B2D000CAEC17 /* MJWebViewViewController.swift in Sources */,
+				98B108411F31AB2500CAEC17 /* MJCollectionViewController.swift in Sources */,
 				980322451F25D64A006DBBA4 /* MJRefreshGifHeader.swift in Sources */,
 				9800636A1F1F0002007EEDE7 /* MJRefreshComponent.swift in Sources */,
 				98D776591F298851000AC7DC /* MJDIYHeader.swift in Sources */,
@@ -426,15 +451,18 @@
 				9800636E1F1F3FC8007EEDE7 /* MJRefeshHeader.swift in Sources */,
 				980063EC1F207CEC007EEDE7 /* MJRefreshStateHeader.swift in Sources */,
 				989FA6FC1F18AC4C0068BA0F /* ViewController.swift in Sources */,
+				98B108391F3165FD00CAEC17 /* MJChiBaoZiFooter2.swift in Sources */,
 				98EB34EE1F2B25B600B35C2A /* MJRefreshAutoFooter.swift in Sources */,
 				98EB34EA1F2ADBED00B35C2A /* MJRefreshBackStateFooter.swift in Sources */,
 				983F58721F1EF8250027F12E /* MJExampleViewController.swift in Sources */,
+				98B1083D1F31721A00CAEC17 /* MJDIYAutoFooter.swift in Sources */,
 				98113B801F2EC9D900BF9F95 /* MJRefreshAutoNormalFooter.swift in Sources */,
 				98113B7E1F2EC19900BF9F95 /* MJRefreshAutoStateFooter.swift in Sources */,
 				98EB34E61F29D9AA00B35C2A /* MJRefreshBackFooter.swift in Sources */,
 				980063F01F209B1B007EEDE7 /* MJRefreshNormalHeader.swift in Sources */,
 				98EB34EC1F2ADF1600B35C2A /* MJRefreshBackNormalFooter.swift in Sources */,
 				980322471F26EE89006DBBA4 /* MJChiBaoZiHeader.swift in Sources */,
+				98B1083B1F31663600CAEC17 /* MJRefreshBackGifFooter.swift in Sources */,
 				980064371F21FB97007EEDE7 /* MJTableViewController.swift in Sources */,
 				989FA6FA1F18AC4C0068BA0F /* AppDelegate.swift in Sources */,
 				980064341F21E1C4007EEDE7 /* UIView+MJExtension.swift in Sources */,

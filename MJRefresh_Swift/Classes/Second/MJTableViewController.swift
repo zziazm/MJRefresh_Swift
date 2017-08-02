@@ -161,6 +161,22 @@ class MJTableViewController: UITableViewController {
         self.tableView.mj_footer?.ignoredScrollViewContentInsetBottom = 30
     }
     
+    func example19() -> Void {
+        self.example01()
+        self.tableView.mj_footer = MJChiBaoZiFooter2(refreshingTarget: self, refreshingAction: #selector(loadLastData))
+        self.tableView.mj_footer?.autoChangeAlpha = true
+    }
+    
+    func example20() -> Void {
+        self.example01()
+        self.tableView.mj_footer = MJDIYAutoFooter(refreshingTarget: self, refreshingAction: #selector(loadMoreData))
+    }
+    
+    func example21() -> Void {
+        self.example01()
+        self.tableView.mj_footer = MJDIYBackFooter(refreshingTarget: self, refreshingAction: #selector(loadMoreData))
+    }
+    
     func loadOnceData() -> Void {
         for _ in 0..<5 {
             self.data.append(MJRandomData())
