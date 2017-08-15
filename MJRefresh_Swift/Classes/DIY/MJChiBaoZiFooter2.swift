@@ -2,7 +2,7 @@
 //  MJChiBaoZiFooter2.swift
 //  MJRefresh_Swift
 //
-//  Created by 赵铭 on 2017/8/2.
+//  Created by zm on 2017/8/2.
 //  Copyright © 2017年 zm. All rights reserved.
 //
 

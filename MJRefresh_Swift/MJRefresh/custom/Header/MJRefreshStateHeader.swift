@@ -2,7 +2,7 @@
 //  MJRefreshStateHeader.swift
 //  MJRefresh_Swift
 //
-//  Created by 赵铭 on 2017/7/20.
+//  Created by zm on 2017/7/20.
 //  Copyright © 2017年 zm. All rights reserved.
 //
 

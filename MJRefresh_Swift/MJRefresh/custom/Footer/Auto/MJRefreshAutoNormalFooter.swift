@@ -2,7 +2,7 @@
 //  MJRefreshAutoNormalFooter.swift
 //  MJRefresh_Swift
 //
-//  Created by 赵铭 on 2017/7/31.
+//  Created by zm on 2017/7/31.
 //  Copyright © 2017年 zm. All rights reserved.
 //
 

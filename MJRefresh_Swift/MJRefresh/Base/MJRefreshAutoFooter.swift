@@ -2,7 +2,7 @@
 //  MJRefreshAutoFooter.swift
 //  MJRefresh_Swift
 //
-//  Created by 赵铭 on 2017/7/28.
+//  Created by zm on 2017/7/28.
 //  Copyright © 2017年 zm. All rights reserved.
 //
 
