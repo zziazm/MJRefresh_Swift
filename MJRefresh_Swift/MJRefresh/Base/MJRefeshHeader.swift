@@ -7,138 +7,50 @@
 //
 
 import UIKit
-
-extension UIView{
-    var mj_x: CGFloat{
-        get{
-           return self.frame.origin.x
-        }set{
-            self.frame.origin.x = newValue
-        }
-    }
-    
-    var mj_y: CGFloat{
-        get{
-            return self.frame.origin.x
-        }set{
-            self.frame.origin.y = newValue
-        }
-    }
-    
-    var mj_width: CGFloat{
-        get{
-            return self.frame.size.width
-        }set{
-            self.frame.size.width = newValue
-        }
-    }
-    
-    var mj_height: CGFloat{
-        get{
-            return self.frame.size.height
-        }set{
-            self.frame.size.height = newValue
-        }
-    }
-    
-    var mj_size: CGSize{
-        get{
-            return self.frame.size
-        }set{
-            self.frame.size = newValue
-        }
-    }
-    
-    var mj_origin: CGPoint{
-        get{
-            return self.frame.origin
-        }
-        set{
-            self.frame.origin = newValue
-        }
-    }
-}
-
-extension UIScrollView{
-    var mj_insetTop: CGFloat {
-        get{
-            return self.contentInset.top
-        }set{
-            self.contentInset.top = newValue
-  
-        }
-    }
-    
-    var mj_insetBottom: CGFloat{
-        get{
-            return self.contentInset.bottom
-        }set{
-            self.contentInset.bottom = newValue
-            
-        }
-    }
-    
-    var mj_insetLeft: CGFloat{
-        get{
-            return self.contentInset.left
-        }set{
-            self.contentInset.left = newValue
-        }
-    }
-    
-    var mj_insetRight: CGFloat{
-        get{
-            return self.contentInset.right
-        }set{
-            self.contentInset.right = newValue
-        }
-    }
-    
-    var mj_offsetX: CGFloat{
-        get{
-            return self.contentOffset.x
-        }set{
-            self.contentOffset.x = newValue
-        }
-    }
-    
-    var mj_offsetY: CGFloat{
-        get{
-            return self.contentOffset.y
-        }set{
-            self.contentOffset.y = newValue
-        }
-    }
-    
-    var mj_contentWidth: CGFloat{
-        get{
-            return self.contentSize.width
-        }set{
-            self.contentSize.width = newValue
-        }
-    }
-    
-    var mj_contentHeight: CGFloat{
-        get{
-            return self.contentSize.height
-        }set{
-            self.contentSize.height = newValue
-        }
-    }
-    
-    
-    
-    
-}
-
 class MJRefeshHeader: MJRefreshComponent {
  
-    static func header(refreshingBlock: @escaping MJRefreshComponentRefreshingBlock) -> MJRefreshComponent{
-        let cmp = MJRefeshHeader()
-        cmp.refreshingBlock = refreshingBlock
-        return cmp
+    
+    
+    
+    
+    
+//    static func header(refreshingBlock: @escaping MJRefreshComponentRefreshingBlock) -> MJRefeshHeader{
+//        let cmp = MJRefeshHeader(refreshingBlock: refreshingBlock)
+//        cmp.refreshingBlock = refreshingBlock
+//        return cmp
+//    }
+//    
+//    static func header(target: Any?, refreshingAction: Selector) -> MJRefeshHeader{
+//       let cmp = MJRefeshHeader(target: target, refreshingAction: refreshingAction)
+//       cmp.set(refreshingTarget: target, action: refreshingAction)
+//       return cmp 
+//    
+//    }
+    
+    init(refreshingBlock: @escaping MJRefreshComponentRefreshingBlock) {
+        super.init(frame: CGRect.zero)
+        self.refreshingBlock = refreshingBlock
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    init(target: Any?, refreshingAction: Selector) {
+        super.init(frame: CGRect.zero)
+        self.set(refreshingTarget: target, action: refreshingAction)
+    }
+    
+//    required init() {
+//        super
+//    }
+//    init(refreshingBlock: @escaping MJRefreshComponentRefreshingBlock) {
+//        self.refreshingBlock = refreshingBlock
+//    }
+//    
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
     var lastUpdatedTimeKey = MJRefreshHeaderLastUpdatedTimeKey{
         didSet{
@@ -148,14 +60,16 @@ class MJRefeshHeader: MJRefreshComponent {
     //MARK - 覆盖父类的方法
     override func prepare() {
         super.prepare()
+        self.lastUpdatedTimeKey = MJRefreshHeaderLastUpdatedTimeKey
         self.mj_height = MJRefreshHeaderHeight
     }
-     var ignoredScrollViewContentInsetTop: CGFloat = 0.0
+    var ignoredScrollViewContentInsetTop: CGFloat = 0.0
     override func placeSubviews() {
         super.placeSubviews()
         self.mj_y = -self.mj_height - ignoredScrollViewContentInsetTop
     }
     var insetTDelta: CGFloat = 0.0
+    
     override func scrollViewContentOffsetDidChange(change: [NSKeyValueChangeKey : Any]?) {
         super.scrollViewContentOffsetDidChange(change: change)
         if self.state == .refreshing {
@@ -164,7 +78,7 @@ class MJRefeshHeader: MJRefreshComponent {
             }
             
             if let scrollView = self.scrollView {
-                var insetT = -scrollView.mj_offsetY > self.scrollViewOriginalInset.top ? scrollView.mj_offsetY : self.scrollViewOriginalInset.top
+                var insetT = -scrollView.mj_offsetY > self.scrollViewOriginalInset.top ? -scrollView.mj_offsetY : self.scrollViewOriginalInset.top
                 
                 insetT = insetT > self.mj_height + self.scrollViewOriginalInset.top ? self.mj_height + self.scrollViewOriginalInset.top : insetT
                 scrollView.mj_insetTop = insetT
@@ -200,7 +114,6 @@ class MJRefeshHeader: MJRefreshComponent {
             }
         }
     }
-    
     
     //MARK - set
     override var state: MJRefreshState  {
@@ -254,7 +167,6 @@ class MJRefeshHeader: MJRefreshComponent {
             return (UserDefaults.standard.object(forKey: self.lastUpdatedTimeKey)) as? Date
         }
     }
-    
         /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
